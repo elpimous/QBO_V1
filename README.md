@@ -1,2 +1,3 @@
 # QBO_V1
 QBO VERSION 1 : ROBOT FROM THECORPORA
+![Alt text](/PICTURES/xxx.jpg?raw=true "QBO")
