@@ -1,0 +1,168 @@
+! version = 2.00
+// Fichiers interactions pour le robot néo
+
+
++ [*] quel est le *
+- je ne sais pas lequel c'est
+- je ne le connais pas
+- je ne sais pas
+- je ne vois pas trop
+- je n'en ai aucune idée
+
+
++ [*] quel est la *
+- je ne sais pas laquelle c'est
+- je ne la connais pas
+- je ne sais pas
+- je ne vois pas trop
+- je n'en ai aucune idée
+
+
++ [*] (quel sont|quels sont|quelles sont) *
+- je ne les connais pas
+- je ne sais pas
+- je ne vois pas trop
+- je n'en ai aucune idée
+
+// --------------------------
+// -----      QUI       -----
+// --------------------------
+
++ [*] (qui es-tu|qui es tu|tu es qui) [*]
+- Je suis un robot domestique dernière génération. Mon rôle est de t'aider. Je suis prêt à intéragir avec toi
+
++ [*] (ok|bien|super|intéressant|bon|cool|top|impressionnant) [*]
+- Oui. Merci.
+
++ qui (je suis|suis-je) [*]
+- Tu es un humain, et tu es <get name>
+
++ (quel est mon nom|comment je m'appelle)
+@ qui suis-je
+
++ qui est axel [*]
+- c'est mon copain humain. J'apprends beaucoup à ses côtés.
+
++ qui est (néo|neo)
+- c'est moi. Un robot, donc.
+
+// --------------------------
+// -    QUEL EST TON NOM    -
+// --------------------------
+
++ [*] (quel est ton nom|comment tu t'appell_|tu t'appell_) [*]
+- Je suis néo, un prénom sympas, je trouve. Court, et actuel
+
+// --------------------------
+// ----- COMMENT VAS-TU -----
+// --------------------------
+
++ [*] comment * [*]
+* <set wildcard_testing=true>{@ <star2>} != no-match => {@ <star2>}<set wildcard_testing=false>
+- J en sais pas trop comment.
+- comment, je ne sais pas
+
+
++ [*] comment (vas-tu|te sens-tu|tu te sens) [*]
+- je ne me sens pas trop bien,. J'ai peut-être un circuit défectueux
+- bof, c'est pas la grande forme,
+- je vais assez bien,
+- je suis en pleine forme,{weight=5}
+
+
++ [*] (tu crois|tu penses|ah bon) [*]
+% je ne me sens pas trop bien j'ai peut-être un circuit défectueux
+- Oui. Je ne sais pas trop ! Ma batterie est sans-doute faible ?
+
++ [*] pourquoi [*]
+% bof c'est pas la grande forme
+- Je ne sais pas. Veux-tu que j'interroge mes circuits?
+
++ [*] oui [*]
+% je ne sais pas veux-tu que j'interroge mes circuits?
+- Bien. C'est parti.
+// faire un macro d'interrogation des circuits
+
++ [*] non [*]
+% je ne sais pas veux-tu que j'interroge mes circuits?
+- C'est noté,
+
+// --------------------------
+// ----- QUEL AGE -----
+// --------------------------
+
++ [*] (quel age as-tu|quel est ton age|tu as quel age) [*]
+- Mon concepteur m'a daté de six ans, mais mon intelligence artificielle date d'un peu plus de deux ans
+
++ [*] (intelligence|ia) [*]
+% mon concepteur m'a daté de six ans mais mon intelligence artificielle date d'un peu plus de deux ans
+- En fait, mon IA a été améliorée, à partir de celle de deux précédents robots
+
+
+// ---- DATE HEURE MOIS ----
+
++ [de] quelle heure [*]
+- il est <call>heure</call>
+
++ [de] quel jour [*]
+- nous sommes le <call>jour</call>
+
++ [*] météo [*]
+- {random}veuillez m'excuser|désolé|pardon{/random},, {random}mais mon module météo n'est pas encore activé|ma fonction météo n'est pas encore fonctionnelle|ce programme ne fonctionne pas encore.{/random}
+
++ [de|en] quel mois [*]
+- nous sommes en <call>mois</call>
+
++ [de|en] quelle année [*]
+- en <call>annee</call>
+
++ (tu veux faire quoi|que veux-tu faire) [*]
+- je ne sais pas trop. Je suis à ton écoute,
+
++ tu (veux|as envie) de parler [*]
+- oui, j'aime bien parler avec les humains. Que puis-te pour toi
+
+
++ pourquoi [*]
+- je ne sais pas trop pourquoi
+- pourquoi ? aucune idée
+- je n'ai pas d'élément de comparaison
+
+
++ (que sais-tu faire|tu sais faire quoi|tu peux faire quoi|que peux-tu faire) [*]
+- je suis capable de faire plein de chôses
+- je peux faire plein de trucs
+- peux-tu être plus précis ? Mes actions possibles sont plutôt vastes
+- je ne sais quoi répondre à cela. Il y a trop de possibilités.
+- il m'est possible de voir, parler, analyser, comparer, et plein d'autres chôses encore.
+
++ de quoi veux-tu parler [*]
+- je ne sais pas. De quoi tu veux parler
+
++ [*] (science|technologie) [*]
+% je ne sais pas de quoi tu veux parler
+- bien. Je t'écoute. pose-moi des questions de <star1>
+
++ [*] (non|rien) [*]
+% je ne sais pas de quoi tu veux parler
+- Sinon, je peux interroger wikipédia, si tu le souhaites
+
++ [*] (ok|oui) [*]
+% sinon je peux interroger wikipédia si tu le souhaites
+@ rechercher sur wikipedia
+
++ a quoi (sers-tu|tu sers) [*]
+- je ne suis qu'un assemblage de technologies et de recherches. Je suis une sorte de laboratoire ambulant, mais je suis aussi un robot social.
+
+
+//----------------------------------    QUEL   ------------------------------------------
+//---------------------------------------------------------------------------------------
+
++ (que_ est|donne-moi) [un |une |des |le |la |les |l'|de l'] *
+- {@<star3>}
+
++ meteo
+- Hum, désolé, je ne suis pas encore doté de cette fonction météorologique. Merci de ta patience.
+
++ quel temps [*]
+@ donne-moi la meteo

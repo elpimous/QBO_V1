@@ -1,0 +1,14 @@
+<launch>
+
+  <!-- launch qbo_listen-->
+  <node name="qbo_listen" pkg="qbo_listen" type="qbo_listen.py" output="screen">
+    <param name="hmm" value="$(find qbo_listen)/config/fr/vocal_move/vocal_move_fr_model"/>
+    <param name="lm" value="$(find qbo_listen)/config/fr/vocal_move/vocal_move.lm.bin"/>
+    <param name="dic" value="$(find qbo_listen)/config/fr/vocal_move/vocal_move.dic"/>
+  </node>
+
+     <node name="qbo_vocal_move" pkg="qbo_vocal_move" type="neo_vocal_move.py">
+     </node>
+
+</launch>
+

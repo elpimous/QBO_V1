@@ -1,0 +1,15 @@
+! version = 2.00
+
+// Fichiers interactions pour le robot néo
+
++ (as-tu|est-ce que tu as) des (yeux|caméras)[*]
+- oui, je dispose de deux yeux fonctionnels, qui sont des caméras haute définition. Je peux même faire de la stéréovision.
+
++ (as-tu|est-ce que tu as) des (bras|jambes|genous|pieds|mains|coudes)[*]
+- mais biensûr. J'aimerais bien, mais tu peux facilement constater l'absence de <star2>
+
++ (as-tu|est-ce que tu as) (un nez|une bouche)[*]
+- si j'ai <star2>? Oui, biensur. Cet accessoire me permet d'améliorer mes interactions avec les humains.
+
++ (as-tu|est-ce que tu as) des oreilles [*]
+- oui, on peux dire ça ! je dispose, en fait, d'un circuit contenant quatre micros, qui travaillent ensemble afin de nettoyer et d'extraire la voix de mon interlocuteur.

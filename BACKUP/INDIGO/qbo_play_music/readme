@@ -1,0 +1,27 @@
+needs : 
+°°°°°°°
+qbo_listen, 
+qbo_talk, 
+qbo_head_joystick
+
+
+dependencies :
+°°°°°°°°°°°°°°
+install this or it will not work !!
+sudo apt-get install xmms2-client-nycli
+
+######################################################################################
+
+This player works with vocal orders. You can order (in french):
+
+lecture
+prédédent(e)
+suivant(e)
+pause 
+stop
+titre
+combien
+
+Gently press on QBO head (left or right) and music will pause for 5 sec
+
+######################################################################################

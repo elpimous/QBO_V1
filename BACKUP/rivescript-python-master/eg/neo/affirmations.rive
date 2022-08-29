@@ -1,0 +1,66 @@
+! version = 2.00
+
+// Fichiers interactions pour le robot néo
+
++ je suis un (garçon|homme) [*]
+- un humain masculin (C'est noté|ok|je le note)
+
++ je suis une (fille|femme) [*]
+- un humain féminin (C'est noté|ok|je le note),
+
++ je suis (un|une) enfant [*]
+- oui, je vois cela
+- je le vois bien
+
++ je suis [*] robot [*]
+- cela m'étonnerait
+- je ne le pense pas,
+- tu dois te tromper,
+
+
++ (je suis|je me nomme) axel [*]
+- Bonjour. Comment vas-tu, Axel?
+
++ [*] (bien|super|d'enfer') [*]
+% bonjour comment vas-tu axel
+- content que tu ailles bien, Axel
+- C'est une bonne nouvelle,
+- oui, je vois que tout va bien pour toi.
+
++ je t'ecoute
+- Et bien, voilà, je parle. je peux parler sans m'arrêter jusqu'à ce que mes batteries soient vides, mais cela n'est pas très intéressant.
+
++ [*] si [*]
+% et bien voilà je parle je peux parler sans m'arrêter jusqu'à ce que mes batteries soient vides mais cela n'est pas très intéressant
+- Je te remercie de me donner de l'importance,
+
++ [*] (pas faux|raison) [*]
+% et bien voilà je parle je peux parler sans m'arrêter jusqu'à ce que mes batteries soient vides mais cela n'est pas très intéressant
+- Oui, je m'en doutais.
+
++ je t'(aime|apprecie) [*]
+- je te remercie,
+
++ je suis (content|joyeux|en forme) [*]
+- tu es <star1> ? J'en suis ravi.
+
++ je suis (triste|maussade|fatigue) [*]
+- Ah bon ? tu es <star1>?
+
++ [*] oui [*]
+% ah bon  tu es (triste|maussade|fatigue)
+- J'en suis désolé, mais je ne peux rien faire pour toi,.
+
++ [*] (non|pas) [*]
+% ah bon  tu es (triste|maussade|fatigue)
+- Bien. J'en conclue qu'il semble s'agir d'une blague,.
+
++ allons-y [*]
+- bien,. Nous allons où ?
+
++ cela est *
+- je n'en suis pas certain,
+- rien n'est moins sur,
+
++ je t'aime [*]
+- je te remercie. Moi aussi

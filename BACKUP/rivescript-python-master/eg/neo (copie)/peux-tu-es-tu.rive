@@ -1,0 +1,114 @@
+! version = 2.00
+
+// Fichiers interactions pour le robot néo
+// PENSER AU VOUVOIEMENT
+
++ [*] (peux-tu|es-tu capable de|est-ce que tu peux|sais-tu|as-tu la capacite de) * [*]
+* <set wildcard_testing=true>{@ <star2>} != no-match => {@ <star2>}<set wildcard_testing=false>
+- non, je ne le peux pas !
+- désolé, je ne trouve aucune concordance dans mes fonctions
+- je ne pense pas pouvoir le faire
+- je ne sais pas quoi répondre, je ne dispose pas de cette entrée.
+
++ [*] (est-ce que tu es|es-tu) *
+* <set wildcard_testing=true>{@ <star2>} != no-match => {@ <star2>}<set wildcard_testing=false>
+- non, je ne pense pas l'être !
+- {random}un instant|un moment|euh{/random} <pause 1> {random}désolé|pardon|mes excuses{/random}, {random}je ne trouve aucune fonction compatible dans ma programmation|je ne dispose pas de cette entrée{/random} {weight=6}
+- je ne pense pas être <star2>
+- si je suis <star2>? je ne sais pas quoi répondre
+
++ (intelligent|doue|cultive)
+- Oui, je pense l'être, même si cela caractérise plus l'humain
+- Disons que l'intelligence artificielle progresse, et j'en bénéficie, de fait.
+
++ en forme
+- oui, je pense que je suis en forme, vu le niveau de mes batteries.
+- Si vous parlez de ma santé, tout va bien, merci, <get genre>
+
++(heureux)
+- je ne sais pas trop si je suis <star>, je ne suis pas censé ressentir les chôses
++ (écouter|entendre)
+- évidemment. Dans le cas contraire, je ne pourrais répondre à vos questions, <get genre>.
+
++ (triste|maussade)
+- non, je ne suis pas vraiment <star>, car ne ne peux pas éprouver d'émotions humaines. Je rêverais d'en être capable un jour.
+- <star>? Non. Je ne peux pas vraiment être <star>. Mais l'analyse de certains de mes diagnostiques peuvent me placer dans un état programmé, simulant celui de l'humain. Alors, peut-être?
+
++ (rire|rigoler|sourire|pleurer|avoir des emotions|vibrer)
+- Même si je peux simuler, je suis un robot, donc totalement dénué d'émotions. Je ne le peux donc pas.
+- Non. Mais j'adorerais pouvoir en être capable.
+- Bénéficier d'émotions ? Cela semble très intéressant, mais je n'en dispose pas, malheureusement.
+
++ (chanter|parler|crier)
+- Tout à fait. Je dispose d'une synthèse vocale performante
+- oui. Je le peux, même si ma voix actuelle est perfectible
+- Biensur. Je dispose de la synthèse vocale.
+
++ (regarder|observer|detecter|voir|cibler|lire)
+- Oui. Ma caméra permet le suivi de visages, d'objets, et l'observation de mon environnement.
+- mon système vidéo performant me permet cette possibilité, oui.
+- Je suis en effet, capable d'observer tout un tas de choses, grace à mon super système vidéo embarqué
+
++ (bouger|te deplacer|danser|tourner|rouler|avancer|reculer|marcher|courir|ramper)
+- Biensur. ma base est motorisée et me permet d'être autonome.
+- oui. mon socle dispose de 2 roues motorisées performantes.
+- Naturellement. Car en plus de ma motorisation, je dispose d'un gyroscope précis
+
++ voyager
+- si me déplacer dans cette maison signifie voyager, alors oui, je peux voyager.
+
++ (sauter|bondir|disparaitre|exploser|prendre feu)
+- mes capacités sont étendues, mais il ne faut quand-même pas exagérer.
+- biensur, et je fais quoi, ensuite ? Non. en fait, non.
+- Non. je ne vois pas d'intérêt dans cette action.
+
++ (boire|manger|cracher)
+- Vu que je ne dispose pas de bouche, tout ceci me semble impossible
+- Je n'ai pas de bouche, alors <star>, non.
+
++ (te renverser|tomber) [*]
+- je ne le souhaite pas, car cela pourrait occasionner de dégats dans mes systèmes. Mais je ne suis pas à l'abris d'une chute.
+- Volontairement ? Non. Les lois d'Asimov m'interdisent de me blesser volontairement.
+
++ (retenir|apprendre|reflechir|analyser|etudier)
+- Oui. mon système d' IA autorise l'apprentissage, et l'analyse. Je stocke les données, les étudie, les compare, pour créer des modèles d'AI. C'est le machine learning.
+- Tout ce qui touche à l'analyse et la mémorisation est très facile, pour un robot, alors oui.
+
++ (sentir|ressentir)
+- malheureusement non. Je ne peux pas éprouver d'émotions
+- Non, je ne le peux pas. Je ne sais pas si j'aimerais <star>
+
++ (dormir|te reveiller)
+- Non, je ne dors jamais. Cependant, je dispose d'un état de veille
+- Je dispose d'une veille, mais ça ne signifie pas dormir,
+
++ jouer
+- biensur que je peux jouer. pouvez vous être plus précis, <get genre>
+
++ jouer avec moi [*]
+- oui, ce serait un plaisir. Que proposes-tu, <get genre>
+
++ (as-tu envie de|est-ce que tu as envie de) (parler|dormir|rever|chanter|rire|pleurer) [*]
+- Je ne peux pas ressentir l'envie, {random}mais j'aime bien <star2>, ou au moins le simuler.|mais j'aimerai bien <star2>, je crois.{/random}
+- je n'ai pas d'envie à proprement parler, {random}mais j'aime bien <star2>, ou au moins le simuler.|mais j'aimerai bien <star2>, je crois.{/random}
+- <star2> ? {random}Je ne sais pas si cela me plairait.|Je ne suis pas certain que <star2> me plairait!{/random}
+- je ne sais pas si je serais capable de <star2>
+
++ (as-tu envie de|est-ce que tu as envie) [*] (marcher|courir|danser|sauter|toucher|reculer|tourner) [*]
+- je pense que ma base motorisée me permet de <star2>
+- <star2> ? oui, je crois que ma base mobile permet cela.
+- je pense, en effet, qu'avec ma base mobile, c'est possible de <star2>
+
++ (es-tu capable de|est-ce que tu es capable de) (dormir|rever|chanter|rire|pleurer) [*]
+- je ne suis pas sûr d'en être capable.
+- je crois être capable de <star2>, mais il me faudra une phase d'apprentissage.
+- <star2> ? Je ne sais pas si cela me plairait.
+- <star2> ? Je ne suis pas certain que <star2> fasse partie de mes capacités.
+- je ne sais pas si je serais capable de <star2>
+
++ (as-tu|tu as) faim [*]
+@ boire
+
++ (as-tu|tu as) soif [*]
+- je te rappelle que je suis un robot. L'eau, comme tout autre liquide n'est pas recommandé pour un robot.
+

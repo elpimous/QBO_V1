@@ -1,0 +1,11 @@
+16:40:21 **** Rebuild of configuration Debug for project STM3210C-EVAL ****
+Info: Internal Builder is used for build
+arm-atollic-eabi-gcc -c -mthumb -mcpu=cortex-m3 -std=gnu11 -DUSE_STM3210C_EVAL -DSTM32F10X_CL -DUSE_STDPERIPH_DRIVER -I../..\..\ -I../..\..\..\..\Libraries\CMSIS\CM3\CoreSupport -I../..\..\..\..\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x -I../..\..\..\..\Libraries\STM32F10x_StdPeriph_Driver\inc -I../..\..\..\..\Utilities\STM32_EVAL -I../..\..\..\..\Utilities\STM32_EVAL\Common -I../..\..\..\..\Utilities\STM32_EVAL\STM3210C_EVAL -O0 -ffunction-sections -fdata-sections -g -fstack-usage -Wall -Os -w -specs=nano.specs -oUtilities/STM32_EVAL/STM32100E_EVAL/stm32100e_eval.o ../Utilities/STM32_EVAL/STM32100E_EVAL/stm32100e_eval.c 
+In file included from ../Utilities/STM32_EVAL/STM32100E_EVAL/stm32100e_eval.c:27:0:
+../Utilities/STM32_EVAL/STM32100E_EVAL/stm32100e_eval.h:33:24: fatal error: stm32_eval.h: No such file or directory
+ #include "stm32_eval.h"
+                        ^
+compilation terminated.
+
+16:40:21 Build Finished (took 331ms)
+

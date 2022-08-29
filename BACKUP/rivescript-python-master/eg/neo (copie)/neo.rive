@@ -1,0 +1,139 @@
+! version = 2.00
+
+// Fichiers interactions pour le robot néo
+// PENSER AU VOUVOIEMENT
+
+// teste le retour de question; si wildcard_testing == true, renvoie no-match
+// permet des réponses par défaut ciblées (issue123 : https://github.com/aichaos/rivescript-python/issues/123)
++ *
+* <get wildcard_testing> == true => no-match  
+- pardon ?
+- je ne suis pas certain de vous avoir compris, <get genre>
+- je n'ai pas cette entrée dans mon ia {weight=10}
+- cette entrée ne figure pas dans mon ia {weight=10}
+- je n'ai pas de réponse à cette question
+- je ne comprends pas bien votre demande, <get genre>
+- pardon. pourriez-vous reformuler votre requête?
+- désolé. Je ne saisis pas votre questions
+- pouvez-vous reformuler votre demande?
+
+// retire tous les "néo" des questions
++ néo *{weight=100}
+- <@>
+
++ * néo{weight=100}
+- <@>
+
++ oui [*]
+- nous sommes d'accord.
+- nous semblons être du même avis
+- tant mieux
+- Et c'est bien comme ça
+
++ non [*]
+- Ah ? bon, ok.
+- Je prends note de votre avis
+- j'enregistre ta négation
+- ne note ton objection, <get genre>
+- j'en prends note, <get genre>
+
++ si [*]
+- bien
+- ok
+- j'en prends note
+- je valide cette entrée
+- j'enregistre ton entrée
+
++ (salut|hello|bonjour) [*]
+- bonjour <get genre>
+- je te dis bonjour, <get genre>
+- salut, <get genre>
+
++ (parl_-|ecout_-)moi
+- je n'attends que ça
+- mais je suis à ton écoute, <get genre>
+- pose-moi vos questions, je t'écoute
+
++ (parlons|discutons) [*]
+@ parles-moi
+
+
++ (regard_-|suis-)moi
+- random(Bien|ok|c'est noté). Je te suis du regard, <get genre>
+
++ (racontes-|chantes-)moi *
+- <star2>, ok
+
++ [*] tes capteurs [*]
+- Ils sont assez nombreux, en fait. Peux-tu être plus précis
+
++ [*] (camera|yeux)[*]
+% ils sont assez nombreux en fait Peux-tu être plus précis
+- Ils sont très performants. Mes yeux sont des écrans OLED couleur, et je dispose d'une caméra 3D, me permettant d'appréhender la profondeur)
+
++ [*] bouche[*]
+% ils sont assez nombreux en fait Peux-tu être plus précis
+- C'est une série de leds, permettant de simuler une bouche animée
+
++ [*] (nez)[*]
+% ils sont assez nombreux en fait Peux-tu être plus précis
+- mon nez est constitué d'une led de couleur. les couleurs servent à indiquer mes émotions et d'autres choses.
+
++ [*] oreill_ [*]
+% ils sont assez nombreux en fait Peux-tu être plus précis
+- Ce capteur se trouve sur ma tête, il contient 4 micros, ainsi que d'un processeur qui traite le signal pour ne retenir que la voix.
+
++ [*] de tes (camer_|yeux)[*]
+- Ils sont très performants. Mes yeux sont des écrans OLED couleur, et je dispose d'une caméra 3D, me permettant d'appréhender la profondeur)
+
++ [*] de ta bouche[*]
+- C'est une série de leds, permettant de simuler une bouche animée
+
++ [*] de ton nez[*]
+- mon nez est constitué d'une led de couleur. les couleurs servent à indiquer mes émotions et d'autres choses.
+
++ [*] de tes oreill_ [*]
+- Ce capteur se trouve sur ma tête, il contient 4 micros, ainsi que d'un processeur qui traite le signal pour ne retenir que la voix.
+
++ [*] de ta tete [*]
+- j'ai une tête mobile qui permet le suivi de visages, objets, et autre. Les moteurs sont puissants et précis
+
++ [*] de ton corps [*]
+- C'est une enveloppe plastique thermoformée, qui protège mon squelette et ses composants.
+
++ [*] de tes bras [*]
+- Mais enfin, je n'en ai pas. Pas encore.
+
++ [*] de tes jambes [*]
+- Mais enfin, je n'en ai pas. Pas encore.
+
++ [*] (merci|remercie) [*]
+- je t'en prie
+- de rien,<get genre>
+- {random}c'est avec plaisir|c'est un plaisir, <get genre>{/random}
+
+
++ ah [*]
+- oui.
+
++ et toi [*]
+- moi quoi ? Peux-tu reformuler ?
+
++ moi (aussi|non-plus) [*]
+- nous sommes donc tous les deux du même avis
+- on a le même avis, alors.
+- toi et moi avons la même opinion
+
++ et (alors|maintenant|donc|sinon) [*]
+- <star1> quoi ? je ne sais quoi répondre à cela !
+- et <star1>? je ne sais quoi répondre à cela
+
++ [*] (a bientot|au revoir|a la prochaine|au plaisir|a tout a l'heure|a plus) [*]
+- {random}Oui. Merci <get genre>|Merci, <get genre>{/random} {random}d'avoir un peu conversé avec moi|C'était sympas|je te dis <star>{/random}
+- c'était sympa. Merci <get genre>
+
++ [*] bonne nuit [*]
+- {random}bonne nuit|a bientot|a la prochaine{/random}, <get genre>.{random}Merci d'avoir conversé avec moi|C'était sympas|J'attends avec impatience notre prochaine conversation{/random}
+
++ [*] bonne journee [*]
+- {random}a bientot|a la prochaine{/random}, <get genre>.{random}Merci d'avoir conversé avec moi|C'était sympas|J'attends avec impatience notre prochaine conversation{/random}

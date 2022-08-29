@@ -1,0 +1,7 @@
+<launch>
+
+  <!-- run head_joy -->
+     <node name="qbo_head_joy" pkg="qbo_head_joystick" type="qbo_head_joy.py" output="screen">
+     </node>
+
+</launch>

@@ -1,0 +1,7 @@
+<launch>
+
+  <!-- launch life -->
+     <node name="qbo_alive" pkg="qbo_alive" type="neo_alive.py">
+     </node>
+
+</launch>

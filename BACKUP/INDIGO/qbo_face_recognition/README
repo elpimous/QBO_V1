@@ -1,0 +1,27 @@
+Qbo_face_recognition
+====================
+
+A package for face reco learning, and recognizing
+
+faces pics are located in data rep.
+
+for ros indigo / catkinized
+_____________________________________________________________________
+
+ 1/       roslaunch qbo_camera qbo_stereo_node.launch
+ 2/       rosrun qbo_face_recognition Fserver
+ 3/       rosrun qbo_face_recognition Fclient
+
+
+ 4/
+to recognize faces :  rostopic pub -1 /fr_order face_recognition/FRClientGoal -- 1 "none"
+	or
+   to learn face :    rostopic pub -1 /fr_order face_recognition/FRClientGoal -- 2 "the_name_to_learn"
+	or
+    to leave :        rostopic pub -1 /fr_order face_recognition/FRClientGoal -- 4 "none
+_____________________________________________________________________
+
+recognized face name are in topic : /face_recognition/feedback
+
+TODO : a GUI interface, a publisher (name)
+       

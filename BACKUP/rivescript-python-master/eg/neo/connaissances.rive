@@ -1,0 +1,174 @@
+! version = 2.00
+
+// Fichiers interactions pour le robot néo
+
++ [*] (a quoi ça sert|ça sert a quoi) [un |une |des |le |la |les |l'|de l'|de]*
+* <set wildcard_testing=true>{@ <star2>} != no-match => {@ <star2>}<set wildcard_testing=false>
+- je ne sais pas a quoi ça peut servir !
+- je n'ai pas encore appris à quoi cela sert
+
++ [*] (est-ce que tu connais|connais-tu|qui est|qui sont) [un |une |des |le |la |les |l'|de l']*
+* <set wildcard_testing=true>{@ <star2>} != no-match => {@ <star2>}<set wildcard_testing=false>
+- non, je ne connais pas cela !
+- désolé, je ne trouve aucune concordance dans ma base de donnée
+- je ne sais pas quoi répondre, je ne dispose pas de cette entrée.
+
+
++ rechercher sur wikipedia [*]
+- {topic=wikirandom}{@recherche}
+
+> topic wikirandom
+    + recherche
+    - <call>WikiRandom</call>. Souhaites-tu une autre recherche?
+    - <call>WikiRandom</call>. En veux-tu une autre?
+    - <call>WikiRandom</call>. Encore?
+    - <call>WikiRandom</call>. Une nouvelle recherche?
+
+    + [*] oui [*]
+    @ recherche
+    
+    + [*] non [*]
+    - bien {topic=random}
+    - d'accord. n'hésites pas à nouveau,{topic=random}
+    
+    + *
+    - pardon? souhaites-tu une nouvelle recherche wikipedia?
+
+< topic
+
+
++ (madonna|shakira)
+- c'est une chanteuse, il me semble
+
++ (picasso|van gogh|dhali)
+- c'est un peintre très connu
+
++ (einstein|newton|stephen awkins)
+- c'est un scientifique très réputé. Mais il est décédé.
+
++ [*] c'est quoi [un |une |des |le |la |les |l'|de l']*
+* <set wildcard_testing=true><@> != no-match => <@><set wildcard_testing=false>
+- je ne connais pas cela !
+- non, je ne sais pas ce que cela peut être.
+- désolé. Je ne sais pas ce que c'est
+
++ c'est (interessant|etonnant|impressionnant)
+- oui, je trouve aussi que c'est <star1>
+- <star1> ? Oui, je le pense aussi.
+
++ [*] (c'est comment|comment c'est) [un |une |des |le |la |les |l'|de l']*
+* <set wildcard_testing=true><@> != no-match => <@><set wildcard_testing=false>
+- je ne connais pas cela !
+- désolé. Je ne sais pas comment c'est
+
++ (ciel|espace|etoil_|soleil|astre) [*]
+- cette donnée scientifique n'est pas programmée dans mon système, mais je crois qu'il s'agit d'astronomie.
+
++ [*] astronomie [*]
+- c'est, il me semble, l'étude du ciel et ce qu'il contient.
+
++ (animal|mamifère) [*]
+- il est difficile pour moi, de répondre à cela. un animal ou mamifère ne fait pas partie de la race des humains, mais il vit sur terre.
+
++ (chien|loup|chat|tigre|lion|panthere|ours)
+- Il s'agit d'un mamifère terrestre possédant quatre pattes, ainsi qu'une machoire très puissante
+
++ oiseau
+- C'est un un volatile doté d'ailes, lui permettant de s'élever dans les airs
+
++ (air|airs)
+- c'est un gaz qui se trouve au dessus du sol. Les humains en ont besoin pour respirer.
+
++ ailes
+- ce sond des appendices plumés, permettant aux oiseaux de voler
+
++ telephone
+- c'est un appareil permettant de converser à distance. Les smartphones actuels sont très puissants.
+
++ robot
+- intéressant. Je suis un robot !
+- c'est un système automatisé comprenant une unité logique principale, et des unités secondaires, comme des capteurs, de la mémoire.
+
++ (ai|intelligence artificielle)
+- C'est ce qui me caractérise. Un moyen de penser par moi-même, aidé par une technologie naissante.
+
++ stylo
+- un accessoire permettant d'écrire
+
++ moto
+- un engin motorisé, disposant de deux roues et d'un guidon
+
++ (car|bus|autobus)
+- c'est un engin de transport de personnes, par voie terrestre, roulant sur route, au moyen de nombreuses roues.
+
++ bateau
+- c'est un engin permettant de se déplacer sur l'eau
+
++ eau
+- c'est un fluide, un liquide plus ou moins transparent, nécessaire à la vie humaine, et dangereux pour les robots.
+
++ vie [humaine]
+- nous conviendrons que je suis pas le mieux placé pour parler de la vie avec vous ! Je ne suis qu'un robot.
+
++ avion
+- c'est un engin permettant de voler
+
++ helicoptere
+- c'est un appareil volant, grace a des pales
+
++ voler
+- ma base de donnée comprend deux possibilités : se déplacer dans les airs, ou prendre le bien d'un autre sans son accord
+
++ velo
+- c'est un engin terrestre permettant de se déplacer sur les routes, disposant de deux roues
+
++ voiture
+- un véhicule contenant quatre roues et se déplaçant sur la route
+
++ (humain|homme|femme)
+- ce sont les habitants de la terre, disposants de deux bras et deux jambes, ainsi qu'un cerveau développé, comme vous.
+
++ enfant
+- un enfant, comme Axel, est créé par un homme et une femme. c'est un petit humain.
+
++ (maison|cabane|domicile|tente)
+- l'habitation des humains. Je me trouve dans ta maison, ou domicile.
+
++ (doudou|nounours)
+- c'est une peluche créant un lien affectif avec les enfants. Axel, mon copain, a cinq doudous.
+
++ [*] [comment|nom|appell_] [*]
+% c'est une peluche créant un lien affectif avec les enfants axel mon copain a cinq doudous
+- il y a doudou tout mou, doudou vache, monsieur rhino, michka, et jibi la girafe
+
++ vincent
+- c'est mon créateur. Il m'a programmé, et donné une intelligence artificielle. Il m'a permis d'analyser et comprendre mon environnement, et interagir avec lui. Je lui suis reconnaissant, même si j'aurais aimé qu'il me dote de plus d'interaction,
+
++ stephanie
+- C'est la maman de mon copain, Axel.
+
++ axel
+- c'est mon copain. il est plus grand que moi, mais je crois qu'il m'aime bien.
+
++ asimov
+- c'est un romancier, né en 1920. il est à l'origine des 3 lois à l'attention des robots
+
++ [*] (quelles|lo_) [*] // lois
+% c'est un romancier né en 1920 il est à l'origine des 3 lois à l'attention des robots
+- Elles sont au nombre de trois.
+
++ [*] premiere loi [*]
+- <set loiasimov1=ok>Un robot ne peut porter atteinte à un être humain ni, restant passif, laisser cet être humain exposé au danger.
+
++ [*] (deuxieme|seconde) loi [*]
+- <set loiasimov2=ok>Un robot doit obéir aux ordres donnés par les êtres humains, sauf si de tels ordres sont en contradiction avec la Première Loi.
+
++ [*] (troisieme|derniere) loi [*]
+- <set loiasimov3=ok>Un robot doit protéger son existence dans la mesure où cette protection n'entre pas en contradiction avec la Première ou la Deuxième Loi.
+    
+    
+    
+    
+    
+
+
