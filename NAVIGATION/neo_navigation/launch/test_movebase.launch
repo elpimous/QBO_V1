@@ -1,0 +1,8 @@
+<launch>
+
+  <!--      for neo robot 20-03-2019   -->
+
+<!-- MOVE BASE -->
+  <include file="$(find QBO_Neo_navigation)/launch/includes/move_base.launch.xml"/>
+
+</launch>

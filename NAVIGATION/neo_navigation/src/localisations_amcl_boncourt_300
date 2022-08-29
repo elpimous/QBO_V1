@@ -1,0 +1,29 @@
+emplacement docking, face LTag :
+Setting goal: Frame:map, Position(-0,539, 1,213, 0,000), Orientation(0,000, 0,000, 0,904, -0,428) = Angle: -2,256
+
+SAM, coté salon :
+Setting goal: Frame:map, Position(2,199, -1,909, 0,000), Orientation(0,000, 0,000, 0,855, 0,519) = Angle: 2,051
+
+SAM, coté chambre :
+Setting goal: Frame:map, Position(4,263, -1,148, 0,000), Orientation(0,000, 0,000, 0,357, 0,934) = Angle: 0,730
+
+SALON face TV :
+Setting goal: Frame:map, Position(0,592, 0,335, 0,000), Orientation(0,000, 0,000, 0,884, -0,467) = Angle: -2,169
+
+SALON vers canapé :
+Setting goal: Frame:map, Position(-0,160, 1,116, 0,000), Orientation(0,000, 0,000, 0,053, 0,999) = Angle: 0,106
+
+SALON :
+Setting goal: Frame:map, Position(-0,461, 0,764, 0,000), Orientation(0,000, 0,000, 0,399, 0,917) = Angle: 0,820
+
+entrée : porte-entrée :
+Setting goal: Frame:map, Position(1,355, 2,188, 0,000), Orientation(0,000, 0,000, 0,719, 0,695) = Angle: 1,604
+
+face cuisine :
+Setting goal: Frame:map, Position(2,515, 3,532, 0,000), Orientation(0,000, 0,000, 0,389, 0,921) = Angle: 0,799
+
+face ch. parents :
+Setting goal: Frame:map, Position(4,961, -0,190, 0,000), Orientation(0,000, 0,000, 0,312, 0,950) = Angle: 0,635
+
+face sdb :
+Setting goal: Frame:map, Position(4,500, 0,979, 0,000), Orientation(0,000, 0,000, 0,331, 0,944) = Angle: 0,674

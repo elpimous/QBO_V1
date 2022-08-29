@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<package>
+  <name>QBO_Neo_talk</name>
+  <version>2.0.0</version>
+  <description>New talk package, with Pico2wave</description>
+
+  <maintainer email="vincentfoucault12@gmail.com">elpimous12</maintainer>
+
+  <license>TODO</license>
+
+     <build_depend>message_generation</build_depend> -->
+  <!-- Use buildtool_depend for build tool packages: -->
+     <buildtool_depend>catkin</buildtool_depend> -->
+  <!-- Use run_depend for packages you need at runtime: -->
+     <run_depend>message_runtime</run_depend> -->
+  <!-- Use test_depend for packages you need only for testing: -->
+  <!--   <test_depend>gtest</test_depend> -->
+
+  <build_depend>rospy</build_depend>
+  <build_depend>std_srvs</build_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>std_srvs</run_depend>
+
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+  </export>
+</package>

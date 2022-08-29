@@ -1,0 +1,7 @@
+image: /home/nvidia/catkin_ws/src/QBO_Neo_navigation/maps/2dmap_from_rtabmap.yaml.pgm
+resolution: 0.050000
+origin: [-6.525000, -8.260796, 0.000000]
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196
+

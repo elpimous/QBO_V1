@@ -1,0 +1,28 @@
+<launch>
+	<arg name="marker_size" default="9.0" />
+	<arg name="max_new_marker_error" default="0.01" />
+	<arg name="max_track_error" default="0.005" />
+	<arg name="cam_image_topic" default="/camera/color/image_raw" />
+	<arg name="cam_info_topic" default="/camera/color/camera_info" />
+	<arg name="output_frame" default="/camera_link" />
+
+	<node name="ar_track_alvar" pkg="ar_track_alvar" type="individualMarkersNoKinect" respawn="false" output="screen" args="$(arg marker_size) $(arg max_new_marker_error) $(arg max_track_error) $(arg cam_image_topic) $(arg cam_info_topic) $(arg output_frame)" />
+
+
+  <node name="Docking" pkg="QBO_Neo_docking_with_tag" type="docking.py" output="screen">
+
+    <!-- ID of the Ar_tag to track -->
+    <param name="MARKER_ID_DETECTION" value="30"/>
+
+    <!-- Maximum linear velocity -->
+    <param name="MAX_LINEAR_SPEED" value="0.1"/>
+
+    <!-- Maximum angular velocity -->
+    <param name="MAX_ANGULAR_SPEED" value="0.2"/>
+
+    <!-- last distance robot/tag, before rotating and docking -->
+    <param name="FINAL_DISTANCE" value="0.30"/>
+
+  </node>
+
+</launch>

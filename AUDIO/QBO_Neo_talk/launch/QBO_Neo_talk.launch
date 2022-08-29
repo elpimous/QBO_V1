@@ -1,7 +1,7 @@
 <launch>
 
   <!-- launch QBO_Neo_talk-->
-  <node name="QBO_Neo_talk" pkg="QBO_Neo_talk" type="neo_talk.py" output="screen">
+  <node name="QBO_Neo_talk" pkg="QBO_Neo_talk" type="QBO_Neo_talk.py" output="screen">
   </node>
 
 </launch>

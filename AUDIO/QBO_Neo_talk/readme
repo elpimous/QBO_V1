@@ -6,7 +6,7 @@ this node creates a service called "/say_(chosen language)"
 
 *** When QBO_Neo_talk is running, you can make robot speak with this: ***
 
-open one terminal : rosrun QBO_Neo_talk neo_talk.py
+open one terminal : rosrun QBO_Neo_talk QBO_Neo_talk.py
 
 in other terminal : rosservice call /say_fr1 "salut tout le monde"
                     rosservice call /say_en1 "hello world"

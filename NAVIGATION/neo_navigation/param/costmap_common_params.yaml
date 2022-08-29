@@ -1,0 +1,71 @@
+  max_obstacle_height: 0.6
+  robot_radius: 0.15
+  #map_type: voxel
+  map_type: costmap
+  
+  
+  obstacle_layer:
+    enabled:              true
+    max_obstacle_height:  0.6
+    unknown_threshold:    15
+    mark_threshold:       0
+    combination_method:   1
+    track_unknown_space:  true
+    publish_voxel_map: false
+    origin_z: 0.0
+    z_resolution: 0.2
+    z_voxels: 5
+
+    observation_sources: scan front #front_left front_right
+
+    scan:
+      data_type: LaserScan
+      sensor_frame: camera_link
+      topic: /scan
+      marking: true
+      clearing: true
+      obstacle_range: 2.5
+      raytrace_range: 3.0
+
+    front_left:
+      data_type: PointCloud
+      sensor_frame: front_left_addon
+      topic: /distance_sensors_state/front_left_srf10
+      marking: true
+      clearing: true
+      min_obstacle_height: 0.0
+      max_obstacle_height: 0.6
+      obstacle_range: 2.0
+      raytrace_range: 6.0
+
+    front_right:
+      data_type: PointCloud
+      sensor_frame: front_right_addon
+      topic: /distance_sensors_state/front_right_srf10
+      marking: true
+      clearing: true
+      min_obstacle_height: 0.0
+      max_obstacle_height: 0.6
+      obstacle_range: 2.0
+      raytrace_range: 6.0
+  
+    front:
+      data_type: PointCloud
+      sensor_frame: front_addon
+      topic: /distance_sensors_state/floor_sensor
+      marking: true
+      clearing: true
+      min_obstacle_height: 0.0
+      max_obstacle_height: 0.25
+      obstacle_range: 0.118
+      raytrace_range: 0.2
+      
+  inflation_layer:
+    enabled:              true
+    cost_scaling_factor:  5 #10
+    neutral_cost:         2 #50
+    inflation_radius:     1.0
+    cost_factor:          0.5
+    
+  static_layer:
+    enabled:              true

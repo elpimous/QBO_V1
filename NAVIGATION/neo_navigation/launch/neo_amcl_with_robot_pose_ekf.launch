@@ -1,0 +1,33 @@
+<launch>
+
+  <!--      for neo robot 20-03-2019   -->
+
+  <!-- BRINGUP -->
+  <include file="$(find QBO_Neo_bringup)/launch/minimal_with_robot_pose_ekf.launch"/>
+
+  <!-- D435 CAMERA + DEPTH_IMAGE -->
+  <include file="$(find realsense2_camera)/launch/rs_neo.launch"/>
+  <arg name="align_depth"      default="true"/>
+  <include file="$(find qbo_camera)/launch/depthimage_to_laserscan.launch"/>
+
+  <!-- MAP SERVER + NEO-MAP -->
+  <arg name="map" default="/home/nvidia/catkin_ws/src/QBO_Neo_navigation/maps/maison2.yaml" />
+  <node name="map_server" pkg="map_server" type="map_server" args="$(arg map)">
+  </node>
+  
+  <!-- AMCL -->
+  <arg name="custom_amcl_launch_file" default="$(find QBO_Neo_navigation)/launch/includes/D435_amcl.launch.xml"/>
+  <arg name="initial_pose_x" default="0.0"/>
+  <arg name="initial_pose_y" default="0.0"/>
+  <arg name="initial_pose_a" default="0.0"/>
+  <include file="$(arg custom_amcl_launch_file)">
+    <arg name="initial_pose_x" value="$(arg initial_pose_x)"/>
+    <arg name="initial_pose_y" value="$(arg initial_pose_y)"/>
+    <arg name="initial_pose_a" value="$(arg initial_pose_a)"/>
+  </include>
+
+
+<!-- MOVE BASE -->
+  <include file="$(find QBO_Neo_navigation)/launch/includes/move_base.launch.xml"/>
+
+</launch>
